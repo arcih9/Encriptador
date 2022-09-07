@@ -1,0 +1,53 @@
+header{
+	background-color: rgb(0, 62, 0);
+	padding: 10px;
+	
+}
+
+h1{
+	font-size: 70px; /*tamaño de texto*/
+	font-weight: bold; /*negrita*/
+	text-align: center; /*centrado de texto*/
+	color: rgb(109, 255, 109);
+
+}
+
+div{
+	display: inline-block; /*disposicion de los bloques div*/
+	margin: 20px;/*margen*/
+	text-align: center;
+
+}
+
+.texto{
+	padding: 5px;
+	border-radius: 10px;
+	//border-color: green;
+	height: 370px;
+	width: 450px;
+	margin-left: 100px;
+	background-color: rgb(206, 255, 206);
+
+}
+
+.botones{
+	color: black;
+	font-style: italic;
+	background-color:rgb(109, 255, 109) ;
+	padding: 10px;
+	border-radius: 7px;
+	font-weight: bold;
+	margin-left: 70px;
+	margin-top: 10px;
+	/*margin: 10px;*/
+	width: 150px;
+	height: 35px;
+	/*display: inline;*/
+
+}
+
+footer{
+	text-align: center;
+	background: url(images/fondo2.png);
+	padding: 5px;
+}

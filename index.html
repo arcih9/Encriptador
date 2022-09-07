@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Encriptador </title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>.. Encriptador Alura ONE ☺ ..</h1>
+	</header>
+	<main>
+	 	<div>
+	 		
+	 		<textarea cols="50" rows="10" id="textoentrada" class="texto" required placeholder="escriba el texto en minusculas y sin caracteres especiales"></textarea>
+			<br>
+			<button id="Encriptar" class="botones">  <!-- es para generar un boton-->
+			Encriptar texto
+			</button>
+			<button id="Desencriptar" class="botones">
+			Desencriptar texto
+			</button>
+	 	</div>
+	 	<div>
+	 		
+	 		<textarea cols="50" rows="10" id="textosalida" class="texto" required placeholder="texto salida"></textarea>
+			<br>
+			<button id="Copiar" class="botones">
+			Copiar texto
+			</button>
+
+	 	</div>
+	 	<script>
+	 		
+	 		var input=document.querySelector("textarea");
+
+	 		function Encriptador (){
+			    var texto=input.value.toLowerCase();
+			    var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+			   	document.getElementById("textosalida").value=textoCifrado;	
+		    }
+
+		    var button1=document.querySelector("#Encriptar");// extrae el buton
+	    	button1.onclick=Encriptador;
+
+	 		Encriptador();
+
+	 		//var diccionario={'e':'enter','i':'imes','a':'ai','o':'ober','u':'ufat'};
+	 		/*
+
+		 	var diccionario={[e]:"enter",[i]:"imes",[a]:"ai",[o]:"ober",[u]:"ufat"};
+		 	var input=document.querySelector("input");
+
+		 		function Encriptadorv2(texto,diccionario){
+		 			//var texto=input.value;
+		 			var longitudtexto=texto.length;
+		 			var longitudiccionario=5;
+		 			
+		 			for (var i=0,i <= longitudtexto, i+=1) {
+		 		
+		 				for (var j=0,j<=longituddiccionario,j+=1){
+		 					
+		 					if (texto[i]===diccionario.get(j)) {
+		 						texto[i]=j.toString();
+
+		 					}
+		 				}
+		 			}
+		 			//return ''.join(texto);
+		 			document.getElementById("textosalida").value=return ''.join(texto);
+
+		 		}
+		 	*/	
+
+		    function Desencriptador(){
+		    	 var texto = input.value; 
+		    	 var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u"); 
+		    	 document.getElementById("textosalida").value=textoCifrado;
+
+		    }
+
+		    var button2=document.querySelector("#Desencriptar");// extrae el buton
+	    	button2.onclick=Desencriptador;
+
+	 		Desencriptador();
+
+		    function Copiar(){
+		    	let copiartexto=document.getElementById('textosalida');
+		    	copiartexto.select();
+		    	copiartexto.setSelectionRange(0,99999);
+		    	document.execCommand('copy');
+		    }
+
+	 		var button3=document.querySelector("#Copiar");// extrae el buton
+	 		button3.onclick=Copiar;	
+	 	</script>
+
+	</main>
+	<footer>
+		<img src="images/logo.png" alt="logoOne">
+		<p> &copy Derechos Reservados</p>
+	</footer>
+
+</body>
+</html>
